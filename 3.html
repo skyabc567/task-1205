@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 两个数组的交集
+
+    function intersection(nums1, nums2) {
+        var res = [];
+        for(var i = 0; i < nums1.length; i++) {
+            for(var j = 0; j < nums2.length; j++) {
+                if(nums1[i] == nums2[j]) {
+                    res.push(nums1[i]);
+                }
+            }
+        }
+        var res1 = [];
+        for(var i = 0; i < res.length; i++) {
+            if(i === res.indexOf(res[i])) {
+                res1.push(res[i]);
+            }
+        }
+        return res1;
+    }
+    console.log(intersection([1,2,2,1], [2,2]));
+    console.log(intersection([4,9,5], [4,9,9,8,4]));
+</script>
+</html>

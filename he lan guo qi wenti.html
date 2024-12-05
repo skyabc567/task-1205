@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 给定义一个任意的数字数值和一个任意目标值，将小于等于目标值的元素放在原数组的左侧，将大于目标值的元素放在原数组的右侧
+
+    function part(arr, targer) {
+        // left 表示arr数值中下标小于等于left都是值满足小于等于target的范围
+        var left = -1;
+        // right 表示在arr数值中下标大于等于right的都是满足大于target的范围
+        var right = arr.length;
+        // 控制循环的变量
+        var index = 0;
+        while(index < right) {
+        if(arr[index] < targer) {
+            left ++;
+            var temp = arr[index];
+            arr[index] = arr[left];
+            arr[left] = temp;
+            index ++;
+        } else if(arr[index] > targer) {
+            right--;
+            var temp = arr[index];
+            arr[index] = arr[right];
+            arr[right] = temp;
+        } else {
+            index++;
+        }
+        }
+        return arr; 
+    }
+    console.log(part([1, 2, 3, 4, 11, 22, 33, 44, 99, 88, 77,66, 55, 44], 44));
+</script>
+</html>

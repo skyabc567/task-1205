@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 罗马数字问题
+    
+    function parseRomanNumber(rome) {
+        var res = 0;
+        var romeNumber = {
+            I: 1,
+            V: 5,
+            X: 10,
+            L: 50,
+            C: 100,
+            D: 500,
+            M: 1000,
+        };
+        for(var i = 0; i < rome.length; i++) {
+            if(romeNumber[rome[i]] < romeNumber[rome[i + 1]]) {
+                res -= romeNumber[rome[i]]
+            } else {
+                res += romeNumber[rome[i]];
+            }
+        }
+        return res;
+    }
+    console.log(parseRomanNumber("II"));
+    console.log(parseRomanNumber("IV"));
+    console.log(parseRomanNumber("VI"));
+    console.log(parseRomanNumber("CD"));
+</script>
+</html>
